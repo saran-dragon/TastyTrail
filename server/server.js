@@ -20,7 +20,7 @@ app.use("/api/cart", require("./routes/cart"));
 app.use("/api/order", require("./routes/order"));
 app.use("/api/food", require("./routes/food"));
 
-app.use('/',(req,res)={
+app.get('/',(req,res)={
   res.send("Hello World");
 });
 

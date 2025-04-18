@@ -1,0 +1,31 @@
+.track-orders {
+    padding: 20px;
+  }
+  
+  .order-card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fafafa;
+  }
+  
+  .order-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .order-card li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .order-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 10px;
+  }
+  

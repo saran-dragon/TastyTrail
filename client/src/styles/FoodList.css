@@ -1,0 +1,202 @@
+.menu {
+  text-align: center;
+  margin-top: 55px;
+  border-bottom: 0px;
+}
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  animation: fadeInGrid 0.6s ease-in;
+  padding: 20px;
+  padding-bottom: 50px;
+}
+
+/* Entry animation for the grid */
+@keyframes fadeInGrid {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.food-card {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: fadeInCard 0.4s ease forwards;
+  opacity: 0;
+  max-width: 300px;
+}
+
+/* Staggered fade-in animation for each card */
+@keyframes fadeInCard {
+  to {
+    opacity: 1;
+  }
+}
+
+.food-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.food-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.food-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 12px 12px 4px;
+  color: #333;
+}
+
+.price-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 12px 10px;
+  flex-wrap: wrap;
+}
+
+.discount-badge {
+  background-color: #ff4d4f;
+  color: white;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  animation: pulseBadge 1.5s infinite;
+}
+
+/* Pulse animation for discount badge */
+@keyframes pulseBadge {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.85;
+  }
+}
+
+.prices {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.final-price {
+  font-weight: bold;
+  color: #222;
+  font-size: 1rem;
+}
+
+.food-desc {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0 12px 10px;
+}
+
+.food-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px 12px;
+  gap: 10px;
+}
+
+.add-btn,
+.remove-btn,
+.edit-btn,
+.fav-btn {
+  flex: 1;
+  padding: 8px 10px;
+  border: none;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.add-btn:hover,
+.remove-btn:hover,
+.edit-btn:hover {
+  transform: scale(1.05);
+}
+
+.add-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.remove-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.edit-btn {
+  background-color: #ffc107;
+  color: #222;
+  margin: 12px;
+}
+
+.fav-btn {
+  background-color: transparent;
+  font-size: 1.2rem;
+  color: #e74c3c;
+  max-width: 45px;
+  transition: transform 0.2s ease;
+}
+
+.fav-btn:hover {
+  transform: scale(1.2) rotate(5deg);
+}
+
+.loader-wrapper {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+/* Responsive: Ensure at least 2 cards per row on smallest devices */
+@media (max-width: 500px) {
+  .food-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding-bottom: 120px;
+  }
+
+  .food-name {
+    font-size: 1rem;
+  }
+
+  .food-desc {
+    font-size: 0.8rem;
+  }
+
+  .add-btn,
+  .remove-btn,
+  .edit-btn {
+    font-size: 0.75rem;
+    padding: 6px 8px;
+  }
+}
